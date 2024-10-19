@@ -109,6 +109,8 @@ class PostTypeRegister extends Register {
 	public function get_post_type_settings( WP_Post $post ) {
 		// phpcs:ignore
 		$settings = empty( $post->post_content ) || isset( $_GET['mbcpt-force'] ) ? $this->migrate_data( $post ) : json_decode( $post->post_content, true );
+
+		$this->sanitize_labels( $settings );
 		$this->parse_archive_slug( $settings );
 
 		if ( $this->has_font_awesome( $settings ) ) {
@@ -346,7 +348,8 @@ class PostTypeRegister extends Register {
 		add_action( 'adminmenu', [ $this, 'remove_filter_class_font_awesome' ] );
 	}
 
-	public function enqueue_font_awesome() {
+	public function enqueue_font_awesome(): void {
+		// phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
 		wp_enqueue_style( 'font-awesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css', [], '6.2.1' );
 		wp_add_inline_style(
 			'font-awesome',
