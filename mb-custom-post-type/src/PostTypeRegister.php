@@ -268,8 +268,8 @@ class PostTypeRegister extends Register {
 			$settings = $this->get_post_type_settings( $post_type );
 			$slug     = Arr::get( $settings, 'slug' );
 
-			$singular = strtolower( Arr::get( $settings, 'labels.singular_name' ) );
-			$plural   = strtolower( Arr::get( $settings, 'labels.name' ) );
+			$singular = strtolower( Arr::get( $settings, 'labels.singular_name', '' ) );
+			$plural   = strtolower( Arr::get( $settings, 'labels.name', '' ) );
 
 			$bulk_messages[ $slug ] = [
 				// Translators: %1$s - number of items, %2$s - post type label in singular or plural forms.
@@ -349,8 +349,7 @@ class PostTypeRegister extends Register {
 	}
 
 	public function enqueue_font_awesome(): void {
-		// phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
-		wp_enqueue_style( 'font-awesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css', [], '6.2.1' );
+		wp_enqueue_style( 'font-awesome', MB_CPT_URL . 'assets/fontawesome/css/all.min.css', [], '6.6.0' );
 		wp_add_inline_style(
 			'font-awesome',
 			'.fa:before, fas, .fa-solid:before, .fab:before, .fa-brand:before, .far:before, .fa-regular:before {
