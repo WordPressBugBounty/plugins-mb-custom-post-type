@@ -54,10 +54,9 @@ class Export {
 				'post_type'   => $post->post_type,
 			];
 		}
-		if ( $_REQUEST['post_type'] === 'mb-post-type' ) {
-			$file_name = 'post-types-exported';
-		} elseif ( $_REQUEST['post_type'] === 'mb-taxonomy' ) {
-			$file_name = 'taxonomies-exported';
+		$file_name = 'post-types-export';
+		if ( $_REQUEST['post_type'] === 'mb-taxonomy' ) {
+			$file_name = 'taxonomies-export';
 		}
 		if ( count( $post_ids ) === 1 ) {
 			$data      = reset( $data );
@@ -65,12 +64,14 @@ class Export {
 			$file_name = $post->post_name ?: sanitize_key( $post->post_title );
 		}
 
+		$output = wp_json_encode( $data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT );
+
 		header( 'Content-Type: application/octet-stream' );
 		header( "Content-Disposition: attachment; filename=$file_name.json" );
 		header( 'Expires: 0' );
 		header( 'Cache-Control: must-revalidate' );
 		header( 'Pragma: public' );
-		header( 'Content-Length: ' . strlen( $data ) );
+		header( 'Content-Length: ' . strlen( $output ) );
 
 		echo wp_json_encode( $data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT );
 		die;
