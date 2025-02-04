@@ -3,11 +3,26 @@
  * Plugin Name: MB Custom Post Types & Custom Taxonomies
  * Plugin URI:  https://metabox.io/plugins/custom-post-type/
  * Description: Create custom post types and custom taxonomies with easy-to-use UI
- * Version:     2.7.10
+ * Version:     2.8.0
  * Author:      MetaBox.io
  * Author URI:  https://metabox.io
  * License:     GPL-2.0+
  * Text Domain: mb-custom-post-type
+ *
+ * Copyright (C) 2010-2025 Tran Ngoc Tuan Anh. All rights reserved.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 // Prevent loading this file directly.
@@ -24,7 +39,7 @@ if ( ! function_exists( 'mb_cpt_load' ) ) {
 
 	function mb_cpt_load() {
 		define( 'MB_CPT_DIR', __DIR__ );
-		define( 'MB_CPT_VER', '2.7.10' );
+		define( 'MB_CPT_VER', '2.8.0' );
 
 		if ( class_exists( 'RWMB_Loader' ) ) {
 			list( , $url ) = RWMB_Loader::get_path( __DIR__ );
@@ -32,8 +47,6 @@ if ( ! function_exists( 'mb_cpt_load' ) ) {
 		} else {
 			define( 'MB_CPT_URL', plugin_dir_url( __FILE__ ) );
 		}
-
-		load_plugin_textdomain( 'mb-custom-post-type' );
 
 		new MBCPT\PostTypeRegister();
 		new MBCPT\TaxonomyRegister();
@@ -48,7 +61,6 @@ if ( ! function_exists( 'mb_cpt_load' ) ) {
 
 		new MBCPT\Edit( 'mb-post-type' );
 		new MBCPT\Edit( 'mb-taxonomy' );
-		new MBCPT\About();
 		new MBCPT\Warning();
 		new MBCPT\Import();
 		new MBCPT\Export();
