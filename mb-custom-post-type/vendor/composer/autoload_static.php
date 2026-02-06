@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit6458f3d68afc0fa87c7bd91a89176019
 {
     public static $prefixLengthsPsr4 = array (
-        'M' => 
+        'M' =>
         array (
             'MetaBox\\Support\\' => 16,
             'MBCPT\\' => 6,
@@ -15,11 +15,11 @@ class ComposerStaticInit6458f3d68afc0fa87c7bd91a89176019
     );
 
     public static $prefixDirsPsr4 = array (
-        'MetaBox\\Support\\' => 
+        'MetaBox\\Support\\' =>
         array (
             0 => __DIR__ . '/..' . '/wpmetabox/support',
         ),
-        'MBCPT\\' => 
+        'MBCPT\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

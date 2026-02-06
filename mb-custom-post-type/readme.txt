@@ -3,9 +3,9 @@ Contributors: elightup, metabox, rilwis, duc88b, truongwp, barcavn2
 Donate link: https://metabox.io/pricing/
 Tags: custom post types, custom taxonomies, posts, taxonomies
 Requires at least: 6.5
-Tested up to: 6.8.2
+Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 2.9.2
+Stable tag: 2.11.2
 License: GPLv2 or later
 
 Create and manage custom post types and custom taxonomies with an easy-to-use UI in WordPress.
@@ -61,6 +61,38 @@ If you like this plugin, you might also like our other WordPress products:
 1. Edit custom post type - Taxonomies tab
 
 == Changelog ==
+
+= 2.11.2 - 2025-12-16 =
+
+- Rearrange settings for a better UX
+- Fix fatal error in on post list screen
+- Use React 18 and update all packages to the latest versions
+
+= 2.11.1 - 2025-11-24 =
+
+- Add filters for reordering post types and taxonomies, allowing built-in or other post types/taxonomies can be reordered. See [docs for usage](https://docs.metabox.io/reorder-posts-terms/).
+
+= 2.11.0 - 2025-11-05 =
+
+**Highlights:**
+
+Add toggle status column settings for quickly toggle Published/Draft status for custom post types.
+
+**Other changes:**
+
+- WPML integration: fix wrong value for registering string
+- Fix bug with `meta_box_sanitize_cb` when importing data from ACF
+
+= 2.10.0 - 2025-10-07 =
+
+**Highlights:**
+
+Add new feature for taxonomies: allow to reorder terms.
+
+**Other changes:**
+
+- Remove "text_domain" from generated labels
+- Fix encoded unicode characters when importing
 
 = 2.9.2 - 2025-09-15 =
 
