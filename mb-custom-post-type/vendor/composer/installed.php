@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wpmetabox/mb-custom-post-type',
-        'pretty_version' => '2.11.2',
-        'version' => '2.11.2.0',
-        'reference' => '2fb4489b3d267b57be830723cfc01dde2ccf8a2b',
+        'pretty_version' => '2.11.3',
+        'version' => '2.11.3.0',
+        'reference' => '6b5344b810f55500d5b60c5d5c05971cd14d3bdf',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'wpmetabox/mb-custom-post-type' => array(
-            'pretty_version' => '2.11.2',
-            'version' => '2.11.2.0',
-            'reference' => '2fb4489b3d267b57be830723cfc01dde2ccf8a2b',
+            'pretty_version' => '2.11.3',
+            'version' => '2.11.3.0',
+            'reference' => '6b5344b810f55500d5b60c5d5c05971cd14d3bdf',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
